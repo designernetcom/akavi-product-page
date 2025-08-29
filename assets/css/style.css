@@ -561,7 +561,7 @@ input {
 }
 
 .section-title-2 {
-  padding-bottom: 15px;
+  padding-bottom: 23px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -582,7 +582,7 @@ input {
   font-family: "Poppins, sans-serif";
   font-size: 26px;
   line-height: 38px;
-  font-weight: 500;
+  font-weight: 600;
   color: #17181c;
   position: relative;
   display: inline;
@@ -3403,7 +3403,7 @@ i.msicon.msi-star.fill {
   text-align: left;
 }
 .header-logo img {
-  width: 140px;
+  width: 210px;
 }
 
 .col.ms-header-logo {
@@ -8833,7 +8833,7 @@ body.ms-menu-open:before {
   width: 50%;
 }
 .ms-single-product .single-pro-desc-no-sidebar {
-  width: 50%;
+  width: 47%;
 }
 .ms-single-product .space-6 > div {
   margin-top: 30px;
@@ -8936,7 +8936,7 @@ body.ms-menu-open:before {
   letter-spacing: 0.02rem;
 }
 .ms-single-product .single-pro-content p {
-  font-size: 14px;
+  font-size: 16px;
   color: #17181c;
   margin: 0 0 12px;
   font-weight: 600;
@@ -8997,9 +8997,9 @@ body.ms-menu-open:before {
 }
 .ms-single-product .single-pro-content .ms-single-list ul li {
   margin: 10px 0;
-  color: #3f3c3c;
+  color: black;
   font-size: 16px;
-  list-style: circle;
+  list-style: disc;
 }
 .ms-single-product .single-pro-content .ms-single-list ul li strong {
   font-weight: 600;
@@ -9056,7 +9056,7 @@ body.ms-menu-open:before {
   color: #777;
 }
 .ms-single-product .single-pro-content .ms-single-price .mrp span {
-  color: #999;
+  color: #6a6161;
   text-decoration: line-through;
 }
 .ms-single-product .single-pro-content .ms-pro-variation {
@@ -9348,7 +9348,7 @@ body.ms-menu-open:before {
   color: #17181c;
   padding: 8px 28px;
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   position: relative;
   -webkit-transition: all 300ms linear;
@@ -9361,13 +9361,27 @@ body.ms-menu-open:before {
 }
 .ms-single-product .ms-single-pro-tab-nav .nav-tabs .nav-link:hover {
   color: #fff;
-  background-color: #3e9172;
-  border: 1px solid #3e9172;
+  background-color: #2B2A29;
+  border: 1px solid #2B2A29;
 }
 .ms-single-product .ms-single-pro-tab-nav .nav-tabs .nav-link.active {
   color: #fff;
-  background-color: #3e9172;
-  border: 1px solid #3e9172;
+  background-color: #2B2A29;
+  border: 1px solid #2B2A29;
+}
+ .ms-header-cat {
+  position: relative; /* normal flow initially */
+  width: 100%;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+.ms-header-cat.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff; /* so content behind isn’t visible */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .ms-single-product .ms-single-pro-tab-nav li {
   display: inline-block;
@@ -9417,13 +9431,13 @@ body.ms-menu-open:before {
 }
 .ms-single-product .ms-single-pro-tab-content .ms-single-pro-tab-desc ul {
   margin-bottom: 15px;
-  padding-left: 24px;
+  padding-left: 19px;
 }
 .ms-single-product .ms-single-pro-tab-content .ms-single-pro-tab-desc ul li {
-  font-size: 15px;
+  font-size: 16px;
   list-style: outside;
   margin-bottom: 4px;
-  color: #777;
+  color: black;
 }
 .ms-single-product .ms-single-pro-tab-content .ms-single-pro-tab-moreinfo p {
   color: #777;
@@ -9444,17 +9458,17 @@ body.ms-menu-open:before {
 }
 .ms-single-product .ms-single-pro-tab-content .ms-single-pro-tab-moreinfo ul li {
   margin-bottom: 4px;
-  font-size: 15px;
+  font-size: 16px;
   list-style: outside;
-  color: #777;
+  color: black;
 }
 .ms-single-product .ms-single-pro-tab-content .ms-single-pro-tab-moreinfo li span {
   /* margin: 0 25px 0 0;
   min-width: 150px; */
-  font-size: 15px;
+  font-size: 16px;
   color: #17181c !important;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   color: #777;
 }
 .ms-single-product .ms-single-pro-tab-content .ms-t-review-item {

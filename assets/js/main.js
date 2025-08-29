@@ -18,6 +18,18 @@
     $('.ms-mobile-menu').removeClass("ms-menu-open");
   });
 
+
+    window.addEventListener("scroll", function () {
+    const header = document.querySelector(".ms-header-cat");
+    const headerHeight = header.offsetHeight;
+
+    if (window.scrollY > headerHeight) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  });
+
   function ResponsiveMobilemsMenu() {
     var $msNav = $(".ms-menu-content, .overlay-menu"),
       $msNavSubMenu = $msNav.find(".sub-menu");
