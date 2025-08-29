@@ -519,53 +519,17 @@
                                 </li>
                             </ul>
                         </div>
-                      
-                      
-                     
-                        
-                      
+
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Category sidebar End -->
-
-    <!-- Cart sidebar Start -->
-
-    <!-- Cart sidebar End -->
-
-
-    <!-- Wishlist sidebar Start -->
-
-    <!-- Wishlist sidebar End -->
-
-    <!-- Breadcrumb start -->
-    <!-- <div class="ms-breadcrumb m-b-30">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row ms_breadcrumb_inner">
-                        <div class="col-md-6 col-sm-12">
-                            <h2 class="ms-breadcrumb-title">Product Page</h2>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                           
-                            <ul class="ms-breadcrumb-list">
-                                <li class="ms-breadcrumb-item"><a href="index.html">Home</a></li>
-                                <li class="ms-breadcrumb-item active">Product Page</li>
-                            </ul>
-                          
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Breadcrumb end -->
-
-
-
+   
     <!-- Sart Single Product -->
     <section class="ms-single-product padding-b-30" style="margin-top: 50px;">
         <div class="container">
@@ -577,7 +541,7 @@
                         <div class="single-pro-inner">
                             <div class="row">
                                 <div class="single-pro-img single-pro-img-no-sidebar">
-                                   
+
 
 
                                     <section class="product-images-section">
@@ -598,38 +562,88 @@
                                             </div>
 
                                             <!-- Right Big Image -->
-                                            <div class="product-main-image"> 
-    <img id="mainProductImage" 
-         src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg" 
-         alt="Main Product"
-         onclick="openImagePopup(this.src, this.alt)"> 
+                                           <div class="product-main-image">
+    <img id="mainProductImage"
+        src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg"
+        alt="Main Product" onclick="openImagePopup(this.src, this.alt)">
 
-    <button class="img-nav-btn prev-btn" onclick="changeMainImage(-1)">&#10094;</button> 
-    <button class="img-nav-btn next-btn" onclick="changeMainImage(1)">&#10095;</button> 
-</div> 
+    <button class="img-nav-btn prev-btn" onclick="changeMainImage(-1)">&#10094;</button>
+    <button class="img-nav-btn next-btn" onclick="changeMainImage(1)">&#10095;</button>
+
+    <!-- Zoom Button -->
+    <button class="zoom-btn" onclick="zoomImage()">🔍 Zoom</button>
+</div>
+<!-- Zoom Modal -->
+<div id="zoomModal" class="zoom-modal" onclick="closeZoomModal()">
+    <span class="zoom-close" onclick="closeZoomModal()">&times;</span>
+    <img class="zoom-modal-content" id="zoomedImage">
+</div>
 
 <script>
-    let imageGallery = [
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg",
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg",
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.jpg"
-    // Add all your product images here
-];
+    function zoomImage() {
+    const mainImg = document.getElementById('mainProductImage');
+    const zoomedImg = document.getElementById('zoomedImage');
+    zoomedImg.src = mainImg.src;
+    document.getElementById('zoomModal').style.display = "block";
+}
+
+function closeZoomModal() {
+    document.getElementById('zoomModal').style.display = "none";
+}
+
 </script>
 
-                             
-                                            
+                                          
+
+
+
                                             <style>
-
-                                                
-
-                  
-.zoom-btn {
-  position: absolute;
-  bottom: 10px;   /* distance from bottom */
-  right: 10px;    /* distance from right */
-  z-index: 10;    /* keep above image */
+                                                .zoom-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
 }
+
+.zoom-modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 5%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+
+.zoom-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+                                               .zoom-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 6px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 
                                                 .product-main-image {
                                                     position: relative;
@@ -698,119 +712,120 @@
                                                 }
                                             </style>
 
-                                        <!-- include once (put these in head or before this script) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
+                                            <!-- include once (put these in head or before this script) -->
+                                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                            <script
+                                                src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
 
-<script>
-$(function () {
-  const images = [
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg",
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg",
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.webp",
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/4.webp",
-    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/5.webp"
-  ];
+                                            <script>
+                                                $(function () {
+                                                    const images = [
+                                                        "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg",
+                                                        "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg",
+                                                        "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.webp",
+                                                        "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/4.webp",
+                                                        "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/5.webp"
+                                                    ];
 
-  let currentIndex = 0;
-  let zoomEnabled = false;
+                                                    let currentIndex = 0;
+                                                    let zoomEnabled = false;
 
-  const $productWrap = $(".product-main-image");          // container that gets zoom()
-  const $mainImage  = $("#mainProductImage");            // <img>
-  const $prevBtn    = $(".prev-btn");
-  const $nextBtn    = $(".next-btn");
-  const $thumbs     = $(".product-thumbnails img");
+                                                    const $productWrap = $(".product-main-image");          // container that gets zoom()
+                                                    const $mainImage = $("#mainProductImage");            // <img>
+                                                    const $prevBtn = $(".prev-btn");
+                                                    const $nextBtn = $(".next-btn");
+                                                    const $thumbs = $(".product-thumbnails img");
 
-  // robust destroy: remove plugin handlers and possible zoom DOM
-  function destroyZoomImmediate() {
-    try { $productWrap.trigger("zoom.destroy"); } catch (e) {}
-    // plugin may create elements with these classes in various versions - remove them
-    $(".zoomWindow, .zoomLens, .zoomImg").remove();
-    // remove any namespaced events left by plugin (defensive)
-    $productWrap.off(".zoom");
-    zoomEnabled = false;
-  }
+                                                    // robust destroy: remove plugin handlers and possible zoom DOM
+                                                    function destroyZoomImmediate() {
+                                                        try { $productWrap.trigger("zoom.destroy"); } catch (e) { }
+                                                        // plugin may create elements with these classes in various versions - remove them
+                                                        $(".zoomWindow, .zoomLens, .zoomImg").remove();
+                                                        // remove any namespaced events left by plugin (defensive)
+                                                        $productWrap.off(".zoom");
+                                                        zoomEnabled = false;
+                                                    }
 
-  // init zoom for current image
-  function initZoom() {
-    destroyZoomImmediate();                 // ensure clean state
-    // use high-res if you have, here using same image as fallback
-    $productWrap.zoom({ url: images[currentIndex] });
-    zoomEnabled = true;
-  }
+                                                    // init zoom for current image
+                                                    function initZoom() {
+                                                        destroyZoomImmediate();                 // ensure clean state
+                                                        // use high-res if you have, here using same image as fallback
+                                                        $productWrap.zoom({ url: images[currentIndex] });
+                                                        zoomEnabled = true;
+                                                    }
 
-  // show image at index and re-init zoom on load
-  function showImage(index) {
-    if (index < 0) index = images.length - 1;
-    if (index >= images.length) index = 0;
-    currentIndex = index;
+                                                    // show image at index and re-init zoom on load
+                                                    function showImage(index) {
+                                                        if (index < 0) index = images.length - 1;
+                                                        if (index >= images.length) index = 0;
+                                                        currentIndex = index;
 
-    // highlight thumbnail
-    $thumbs.removeClass("active");
-    $thumbs.eq(currentIndex).addClass("active");
+                                                        // highlight thumbnail
+                                                        $thumbs.removeClass("active");
+                                                        $thumbs.eq(currentIndex).addClass("active");
 
-    // change src and reinit zoom after load
-    $mainImage.off("load.showImage"); // avoid duplicate handlers
-    $mainImage.on("load.showImage", function () {
-      // small delay helps ensure plugin DOM gets created properly
-      setTimeout(initZoom, 50);
-    });
-    $mainImage.attr("src", images[currentIndex]);
-  }
+                                                        // change src and reinit zoom after load
+                                                        $mainImage.off("load.showImage"); // avoid duplicate handlers
+                                                        $mainImage.on("load.showImage", function () {
+                                                            // small delay helps ensure plugin DOM gets created properly
+                                                            setTimeout(initZoom, 50);
+                                                        });
+                                                        $mainImage.attr("src", images[currentIndex]);
+                                                    }
 
-  // initial setup
-  if ($thumbs.length) {
-    // ensure thumbnails have correct data-index (if you used onclick inline earlier, it's okay too)
-    $thumbs.each(function (i) { $(this).attr("data-index", i); });
-  }
-  showImage(0);
+                                                    // initial setup
+                                                    if ($thumbs.length) {
+                                                        // ensure thumbnails have correct data-index (if you used onclick inline earlier, it's okay too)
+                                                        $thumbs.each(function (i) { $(this).attr("data-index", i); });
+                                                    }
+                                                    showImage(0);
 
-  // thumbnail clicks
-  $thumbs.on("click", function () {
-    const idx = Number($(this).attr("data-index") || $(this).index());
-    showImage(idx);
-  });
+                                                    // thumbnail clicks
+                                                    $thumbs.on("click", function () {
+                                                        const idx = Number($(this).attr("data-index") || $(this).index());
+                                                        showImage(idx);
+                                                    });
 
-  // when hovering the nav buttons, immediately destroy zoom so lens/window disappears
-  function stopZoomOnHover() {
-    destroyZoomImmediate();
-  }
-  function resumeZoomOnLeave() {
-    // resume zoom only if main image loaded (defensive)
-    if (!zoomEnabled) {
-      // small timeout so we don't reinit while user is still moving cursor
-      setTimeout(() => {
-        if (!$mainImage[0].complete) return; // image not fully loaded yet
-        initZoom();
-      }, 80);
-    }
-  }
+                                                    // when hovering the nav buttons, immediately destroy zoom so lens/window disappears
+                                                    function stopZoomOnHover() {
+                                                        destroyZoomImmediate();
+                                                    }
+                                                    function resumeZoomOnLeave() {
+                                                        // resume zoom only if main image loaded (defensive)
+                                                        if (!zoomEnabled) {
+                                                            // small timeout so we don't reinit while user is still moving cursor
+                                                            setTimeout(() => {
+                                                                if (!$mainImage[0].complete) return; // image not fully loaded yet
+                                                                initZoom();
+                                                            }, 80);
+                                                        }
+                                                    }
 
-  // bind mouseenter/leave + touchstart/touchend
-  [$prevBtn, $nextBtn].forEach($btn => {
-    $btn.on("mouseenter touchstart", stopZoomOnHover);
-    $btn.on("mouseleave touchend", resumeZoomOnLeave);
-  });
+                                                    // bind mouseenter/leave + touchstart/touchend
+                                                    [$prevBtn, $nextBtn].forEach($btn => {
+                                                        $btn.on("mouseenter touchstart", stopZoomOnHover);
+                                                        $btn.on("mouseleave touchend", resumeZoomOnLeave);
+                                                    });
 
-  // clicks to change image (zoom will reapply on load via showImage)
-  $prevBtn.on("click", function (e) {
-    e.preventDefault();
-    showImage(currentIndex - 1);
-  });
-  $nextBtn.on("click", function (e) {
-    e.preventDefault();
-    showImage(currentIndex + 1);
-  });
+                                                    // clicks to change image (zoom will reapply on load via showImage)
+                                                    $prevBtn.on("click", function (e) {
+                                                        e.preventDefault();
+                                                        showImage(currentIndex - 1);
+                                                    });
+                                                    $nextBtn.on("click", function (e) {
+                                                        e.preventDefault();
+                                                        showImage(currentIndex + 1);
+                                                    });
 
-  // defensive: if user moves pointer directly off the product wrap, ensure zoom still reinstates
-  $productWrap.on("mouseleave", function () {
-    // re-enable zoom if it was disabled (user might leave via button area)
-    if (!zoomEnabled) {
-      setTimeout(() => { if ($mainImage[0].complete) initZoom(); }, 80);
-    }
-  });
-});
-</script>
+                                                    // defensive: if user moves pointer directly off the product wrap, ensure zoom still reinstates
+                                                    $productWrap.on("mouseleave", function () {
+                                                        // re-enable zoom if it was disabled (user might leave via button area)
+                                                        if (!zoomEnabled) {
+                                                            setTimeout(() => { if ($mainImage[0].complete) initZoom(); }, 80);
+                                                        }
+                                                    });
+                                                });
+                                            </script>
 
 
 
@@ -1001,50 +1016,61 @@ $(function () {
                                                 <li><strong>Upholstery Cover</strong> </li>
                                             </ul>
                                         </div>
-                                          <div class="product-status">
-  <p>AVAILABLE : <span class="in-stock">Pre-Order &#10003;</span></p>
-</div>
+                                        <div class="product-status">
+                                            <p>AVAILABLE : <span class="in-stock">Pre-Order &#10003;</span></p>
+                                        </div>
 
-<style>
-    .product-status {
-  margin-bottom: 10px;
-}
+                                        <style>
+                                            .product-status {
+                                                margin-bottom: 10px;
+                                            }
 
-.in-stock {
-  color: green;
-  font-weight: 500;
-}
+                                            .in-stock {
+                                                color: green;
+                                                font-weight: 500;
+                                            }
 
-.product-colors {
-  margin-top: 10px;
-}
+                                            .product-colors {
+                                                margin-top: 10px;
+                                            }
 
-.color-options {
-  display: flex;
-  gap: 10px;
-  margin-top: 5px;
-}
+                                            .color-options {
+                                                display: flex;
+                                                gap: 10px;
+                                                margin-top: 5px;
+                                            }
 
-.color-circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid transparent;
-  display: inline-block;
-}
+                                            .color-circle {
+                                                width: 30px;
+                                                height: 30px;
+                                                border-radius: 50%;
+                                                cursor: pointer;
+                                                border: 2px solid transparent;
+                                                display: inline-block;
+                                            }
 
-.color-circle.black { background: #000; }
-.color-circle.red { background: #ff0000; }
-.color-circle.cyan { background: #00e5ff; }
-.color-circle.gray { background: #808080; }
+                                            .color-circle.black {
+                                                background: #000;
+                                            }
 
-.color-circle.active {
-  border: 2px solid #000;  /* highlight active color */
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
-}
+                                            .color-circle.red {
+                                                background: #ff0000;
+                                            }
 
-</style>
+                                            .color-circle.cyan {
+                                                background: #00e5ff;
+                                            }
+
+                                            .color-circle.gray {
+                                                background: #808080;
+                                            }
+
+                                            .color-circle.active {
+                                                border: 2px solid #000;
+                                                /* highlight active color */
+                                                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                                            }
+                                        </style>
                                         <div class="product-meta">
 
                                             <div class="color-options">
@@ -2486,7 +2512,7 @@ $(function () {
                                                     <span class="old-price">Rs 5,055</span>
                                                 </span>
                                             </div>
-                                          
+
                                             <!-- Color Swatches -->
                                             <div class="color-swatches">
                                                 <ul class="swatch-list">
