@@ -4593,7 +4593,7 @@ body.ms-menu-open:before {
 }
 @media (max-width: 767px) {
   .header-logo img {
-    width: 120px;
+    width: 175px;
   }
 }
 @media (max-width: 480px) {
