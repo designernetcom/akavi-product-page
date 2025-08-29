@@ -598,24 +598,26 @@
                                             </div>
 
                                             <!-- Right Big Image -->
-                                            <div class="product-main-image">
-                                                <img id="mainProductImage"
-                                                    src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg"
-                                                    alt="Main Product">
+                                            <div class="product-main-image"> 
+    <img id="mainProductImage" 
+         src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg" 
+         alt="Main Product"
+         onclick="openImagePopup(this.src, this.alt)"> 
 
-                                              
-                                                <button class="img-nav-btn prev-btn">&#10094;</button>
-                                                <button class="img-nav-btn next-btn">&#10095;</button>
+    <button class="img-nav-btn prev-btn" onclick="changeMainImage(-1)">&#10094;</button> 
+    <button class="img-nav-btn next-btn" onclick="changeMainImage(1)">&#10095;</button> 
+</div> 
 
-                                               <!-- <button class="zoom-icon-btn">&#128269;</button> -->
+<script>
+    let imageGallery = [
+    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg",
+    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg",
+    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.jpg"
+    // Add all your product images here
+];
+</script>
 
-                                            </div>
-
-                                            <div id="imageZoomModal" class="zoom-modal">
-  <span class="zoom-close">&times;</span>
-  <img class="zoom-modal-content" id="zoomModalImage">
-</div>
-
+                             
                                             
                                             <style>
 
