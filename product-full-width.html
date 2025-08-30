@@ -507,7 +507,7 @@
         <span class="close">&times;</span>
         <div class="modal-content-wrapper">
             <button class="modal-nav-btn modal-prev-btn">&#10094;</button>
-            <img class="modal-content" id="modalImage" alt="Fullscreen Product Image">
+            <img class="modal-content zoom-image-hover" id="modalImage" alt="Fullscreen Product Image">
             <button class="modal-nav-btn modal-next-btn">&#10095;</button>
         </div>
         <div class="modal-thumbnails">
@@ -1120,7 +1120,7 @@
 
                                             .product-meta {
                                                 margin-top: 20px;
-                                                font-family: 'Arial', sans-serif;
+                                               
                                             }
 
                                             .availability,
@@ -1189,292 +1189,208 @@
                                                 Enquire Now
                                             </button>
 
-                                            <style>
-                                                .modal-content {
-                                                    border: none;
-                                                    border-radius: 20px;
-                                                    overflow: hidden;
-                                                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-                                                }
-
-                                                .modal-header {
-                                                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                                                    color: white;
-                                                    border: none;
-                                                    padding: 2rem;
-                                                }
-
-                                                .modal-title {
-                                                    font-weight: 700;
-                                                    font-size: 1.5rem;
-                                                }
-
-                                                .btn-close {
-                                                    filter: invert(1);
-                                                    opacity: 0.8;
-                                                }
-
-                                                .btn-close:hover {
-                                                    opacity: 1;
-                                                }
-
-                                                .modal-body {
-                                                    padding: 2rem;
-                                                    background: #f8f9fa;
-                                                }
-
-                                                .form-floating {
-                                                    margin-bottom: 1.5rem;
-                                                }
-
-                                                .form-control {
-                                                    border: 2px solid #e9ecef;
-                                                    border-radius: 15px;
-                                                    padding: 1rem;
-                                                    font-size: 1rem;
-                                                    transition: all 0.3s ease;
-                                                }
-
-                                                .form-control:focus {
-                                                    border-color: #667eea;
-                                                    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
-                                                }
-
-                                                .form-select {
-                                                    border: 2px solid #e9ecef;
-                                                    border-radius: 15px;
-                                                    padding: 1rem;
-                                                    font-size: 1rem;
-                                                }
-
-                                                .form-select:focus {
-                                                    border-color: #667eea;
-                                                    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
-                                                }
-
-                                                .btn-submit {
-                                                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                                                    border: none;
-                                                    border-radius: 50px;
-                                                    padding: 15px 40px;
-                                                    font-weight: 600;
-                                                    text-transform: uppercase;
-                                                    letter-spacing: 1px;
-                                                    transition: all 0.3s ease;
-                                                    width: 100%;
-                                                    color: white;
-                                                }
-
-                                                .btn-submit:hover {
-                                                    transform: translateY(-2px);
-                                                    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-                                                    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-                                                    color: white;
-                                                }
-
-                                                .required {
-                                                    color: #dc3545;
-                                                }
-
-                                                .form-check-input:checked {
-                                                    background-color: #667eea;
-                                                    border-color: #667eea;
-                                                }
-
-                                                .animate-in {
-                                                    animation: slideInUp 0.5s ease-out;
-                                                }
-
-                                                @keyframes slideInUp {
-                                                    from {
-                                                        opacity: 0;
-                                                        transform: translate3d(0, 100%, 0);
-                                                    }
-
-                                                    to {
-                                                        opacity: 1;
-                                                        transform: translate3d(0, 0, 0);
-                                                    }
-                                                }
-                                            </style>
+                                    <style>
+    .modal-content {
+        border: none;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    .modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
 
 
-                                            <div class="modal fade" id="enquireModal" tabindex="-1"
-                                                aria-labelledby="enquireModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-lg modal-dialog-centered">
-                                                    <div class="modal-content animate-in">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="enquireModalLabel">
-                                                                <i class="fas fa-envelope me-3"></i>
-                                                                Get in Touch with Us
-                                                            </h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form id="enquireForm">
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-floating">
-                                                                            <input type="text" class="form-control"
-                                                                                id="firstName" placeholder="First Name"
-                                                                                required>
-                                                                            <label for="firstName">Full Name <span
-                                                                                    class="required">*</span></label>
-                                                                        </div>
-                                                                    </div>
+    .modal-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        padding: 2rem;
+    }
 
+    .modal-title {
+        font-weight: normal; /* same as body text */
+        font-size: 1.5rem;
+        font-family: inherit; /* inherit body font */
+    }
 
-                                                                </div>
+    .btn-close {
+        filter: invert(1);
+        opacity: 0.8;
+    }
 
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-floating">
-                                                                            <input type="email" class="form-control"
-                                                                                id="email" placeholder="Email Address"
-                                                                                required>
-                                                                            <label for="email">Email Address <span
-                                                                                    class="required">*</span></label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-floating">
-                                                                            <input type="tel" class="form-control"
-                                                                                id="phone" placeholder="Phone Number"
-                                                                                required>
-                                                                            <label for="phone">Phone Number <span
-                                                                                    class="required">*</span></label>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+    .btn-close:hover {
+        opacity: 1;
+    }
 
-                                                                <div class="row">
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-floating">
-                                                                            <input type="text" class="form-control"
-                                                                                id="company"
-                                                                                value=" Akavi Armani Luxury High Back Chair [Green]"
-                                                                                placeholder="Company Name">
-                                                                            <label for="company">Product Name </label>
-                                                                        </div>
-                                                                    </div>
+    .modal-body {
+        padding: 2rem;
+        background: #f8f9fa;
+    }
 
+    .form-floating {
+        margin-bottom: 1.5rem;
+    }
 
+    .form-control {
+        border: 2px solid #e9ecef;
+        border-radius: 15px;
+        padding: 1rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
 
+    .form-control:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+    }
 
-                                                                </div>
+    .form-select {
+        border: 2px solid #e9ecef;
+        border-radius: 15px;
+        padding: 1rem;
+        font-size: 1rem;
+    }
 
-                                                                <div class="form-floating">
-                                                                    <textarea class="form-control" id="message"
-                                                                        placeholder="Your Message" style="height: 120px"
-                                                                        required></textarea>
-                                                                    <label for="message">Your Message <span
-                                                                            class="required">*</span></label>
-                                                                </div>
+    .form-select:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+    }
 
-                                                                <div class="form-check mb-3">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="newsletter">
-                                                                    <label class="form-check-label" for="newsletter">
-                                                                        I would like to receive updates and newsletters
-                                                                    </label>
-                                                                </div>
+    .btn-submit {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 15px 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        width: 100%;
+        color: white;
+    }
 
-                                                                <div class="form-check mb-4">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                        id="terms" required>
-                                                                    <label class="form-check-label" for="terms">
-                                                                        I agree to the <a href="#"
-                                                                            class="text-decoration-none">Terms &
-                                                                            Conditions</a> and <a href="#"
-                                                                            class="text-decoration-none">Privacy
-                                                                            Policy</a> <span class="required">*</span>
-                                                                    </label>
-                                                                </div>
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+        color: white;
+    }
 
-                                                                <button type="submit"
-                                                                    class="btn btn-primary btn-submit">
-                                                                    <i class="fas fa-paper-plane me-2"></i>
-                                                                    Send Enquiry
-                                                                </button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+    .required {
+        color: #dc3545;
+    }
 
-                                            <!-- Success Toast (Optional - Add this if you want success notification) -->
-                                            <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                                                <div id="successToast" class="toast" role="alert" aria-live="assertive"
-                                                    aria-atomic="true">
-                                                    <div class="toast-header bg-success text-white">
-                                                        <i class="fas fa-check-circle me-2"></i>
-                                                        <strong class="me-auto">Success!</strong>
-                                                        <button type="button" class="btn-close btn-close-white"
-                                                            data-bs-dismiss="toast" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="toast-body">
-                                                        Your enquiry has been submitted successfully! We'll get back to
-                                                        you soon.
-                                                    </div>
-                                                </div>
-                                            </div>
+    .form-check-input:checked {
+        background-color: #667eea;
+        border-color: #667eea;
+    }
 
+    .animate-in {
+        animation: slideInUp 0.5s ease-out;
+    }
 
-                                            <script>
-                                                // Form submission handling
-                                                document.getElementById('enquireForm').addEventListener('submit', function (e) {
-                                                    e.preventDefault();
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 100%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
 
-                                                    // Basic validation
-                                                    const form = e.target;
-                                                    if (!form.checkValidity()) {
-                                                        e.stopPropagation();
-                                                        form.classList.add('was-validated');
-                                                        return;
-                                                    }
+<!-- Modal -->
+<div class="modal fade" id="enquireModal" tabindex="-1"
+    aria-labelledby="enquireModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content animate-in">
+            <div class="modal-header">
+                <h5 class="modal-title" id="enquireModalLabel">
+                    Get in Touch with Us
+                </h5>
+                <button type="button" class="btn-close"
+                    data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="enquireForm" class="mx-auto" style="max-width: 700px;">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="text" class="form-control"
+                                    id="firstName" placeholder="Full Name"
+                                    required>
+                                <label for="firstName">Full Name <span
+                                        class="required">*</span></label>
+                            </div>
+                        </div>
+                    </div>
 
-                                                    // Simulate form submission
-                                                    const submitBtn = form.querySelector('.btn-submit');
-                                                    const originalText = submitBtn.innerHTML;
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="form-floating">
+                                <input type="email" class="form-control"
+                                    id="email" placeholder="Email Address"
+                                    required>
+                                <label for="email">Email Address <span
+                                        class="required">*</span></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control"
+                                    id="phone" placeholder="Phone Number"
+                                    required>
+                                <label for="phone">Phone Number <span
+                                        class="required">*</span></label>
+                            </div>
+                        </div>
+                    </div>
 
-                                                    // Show loading state
-                                                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-                                                    submitBtn.disabled = true;
+                    <div class="form-floating">
+                        <textarea class="form-control" id="message"
+                            placeholder="Your Message" style="height: 120px"
+                            required></textarea>
+                        <label for="message">Your Message <span
+                                class="required">*</span></label>
+                    </div>
 
-                                                    setTimeout(() => {
-                                                        // Hide modal
-                                                        const modal = bootstrap.Modal.getInstance(document.getElementById('enquireModal'));
-                                                        modal.hide();
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox"
+                            id="newsletter">
+                        <label class="form-check-label" for="newsletter">
+                            I would like to receive updates and newsletters
+                        </label>
+                    </div>
 
-                                                        // Reset form
-                                                        form.reset();
-                                                        form.classList.remove('was-validated');
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox"
+                            id="terms" required>
+                        <label class="form-check-label" for="terms">
+                            I agree to the <a href="#"
+                                class="text-decoration-none">Terms &
+                                Conditions</a> and <a href="#"
+                                class="text-decoration-none">Privacy
+                                Policy</a> <span class="required">*</span>
+                        </label>
+                    </div>
 
-                                                        // Reset button
-                                                        submitBtn.innerHTML = originalText;
-                                                        submitBtn.disabled = false;
+                    <button type="submit"
+                        class="btn btn-primary btn-submit">
+                        <i class="fas fa-paper-plane me-2"></i>
+                        Send Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-                                                        // Show success toast (if you included the toast HTML)
-                                                        const toastElement = document.getElementById('successToast');
-                                                        if (toastElement) {
-                                                            const toast = new bootstrap.Toast(toastElement);
-                                                            toast.show();
-                                                        }
-                                                    }, 2000);
-                                                });
-
-                                                // Phone number formatting
-                                                document.getElementById('phone').addEventListener('input', function (e) {
-                                                    let value = e.target.value.replace(/\D/g, '');
-                                                    if (value.length >= 6) {
-                                                        value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
-                                                    } else if (value.length >= 3) {
-                                                        value = value.replace(/(\d{3})(\d{3})/, '($1) $2');
-                                                    }
-                                                    e.target.value = value;
-                                                });
-                                            </script>
 
 
 
