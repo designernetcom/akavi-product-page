@@ -3403,7 +3403,7 @@ i.msicon.msi-star.fill {
   text-align: left;
 }
 .header-logo img {
-  width: 210px;
+  width: 180px;
 }
 
 .col.ms-header-logo {
@@ -3667,13 +3667,13 @@ div#ms-main-menu-desk {
 .ms-main-menu ul li a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 55px;
   text-decoration: none;
   text-transform: capitalize;
   color: #17181c;
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
 }
 .ms-main-menu ul li a i {
