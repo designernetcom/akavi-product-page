@@ -5737,8 +5737,9 @@ body.ms-menu-open:before {
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   cursor: pointer;
-  border: 1px solid #eee;
+  border: 1px solid #dedada;
   height: 100%;
+  border-radius: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8932,7 +8933,7 @@ body.ms-menu-open:before {
   display: block;
   font-family: "Poppins, sans-serif";
   font-weight: 600;
-  line-height: 48px;
+  line-height: 50px;
   letter-spacing: 0.02rem;
 }
 .ms-single-product .single-pro-content p {
