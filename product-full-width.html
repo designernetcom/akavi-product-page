@@ -106,8 +106,7 @@
                         <!-- Header Logo Start -->
                         <div class="align-self-center ms-header-logo">
                             <div class="header-logo">
-                                <a href="index.html"><img src="./assets/company_logo/Akavilogo.png"
-                                        alt="Site Logo"></a>
+                                <a href="index.html"><img src="./assets/company_logo/Akavilogo.png" alt="Site Logo"></a>
                             </div>
                         </div>
                         <!-- Header Logo End -->
@@ -448,9 +447,9 @@
                 <div class="ms-cat-sidebar-wrap">
                     <!-- Sidebar Category Block -->
                     <div class="ms-sidebar-block">
-                       
-                     
-                        
+
+
+
 
 
 
@@ -476,525 +475,580 @@
 
 
 
-                                  <section class="product-images-section">
-    <div class="product-gallery">
-        <!-- Left Thumbnails -->
-        <div class="product-thumbnails">
-            <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg"
-                 alt="Thumbnail 1" class="active" data-index="0">
-            <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg"
-                 alt="Thumbnail 2" data-index="1">
-            <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.webp"
-                 alt="Thumbnail 3" data-index="2">
-            <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/4.webp"
-                 alt="Thumbnail 4" data-index="3">
-            <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/5.webp"
-                 alt="Thumbnail 5" data-index="4">
-        </div>
-
-        <div class="product-main-image">
-            <img id="mainProductImage"
-                 src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg"
-                 alt="Main Product">
-
-            <button class="img-nav-btn prev-btn">&#10094;</button>
-            <button class="img-nav-btn next-btn">&#10095;</button>
-        </div>
-    </div>
-
-    <!-- Fullscreen Modal -->
-    <div id="imageModal" class="modal">
-        <span class="close">&times;</span>
-        <div class="modal-content-wrapper">
-            <button class="modal-nav-btn modal-prev-btn">&#10094;</button>
-            <img class="modal-content zoom-image-hover" id="modalImage" alt="Fullscreen Product Image">
-            <button class="modal-nav-btn modal-next-btn">&#10095;</button>
-        </div>
-        <div class="modal-thumbnails">
-            <!-- Thumbnails will be populated by JavaScript -->
-        </div>
-    </div>
-
-    <style>
-        .product-gallery {
-            display: flex;
-            gap: 30px;
-            align-items: flex-start;
-        }
-
-        /* Thumbnails */
-        .product-thumbnails {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 80px;
-        }
-
-        .product-thumbnails img {
-            width: 113%;
-            border: 2px solid transparent;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: transform 0.3s ease, border 0.3s ease;
-        }
-
-        .product-thumbnails img:hover {
-            transform: scale(1.05);
-        }
-
-        .product-thumbnails img.active {
-            border: 1px solid #010101;
-        }
-
-        /* Main image */
-        .product-main-image {
-            flex: 1;
-            text-align: center;
-            border: 2px solid #e2e0e0;
-            border-radius: 10px;
-            padding: 10px;
-            background: #fff;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .product-main-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            transition: transform 0.5s ease, opacity 0.5s ease;
-        }
-
-        .product-main-image:hover img {
-            transform: scale(1.02);
-        }
-
-        .img-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: #8f8e8c;
-            color: #ffffff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 50%;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 10;
-            transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
-        }
-
-        .img-nav-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .prev-btn {
-            left: 10px;
-        }
-
-        .next-btn {
-            right: 10px;
-        }
-
-        .product-main-image:hover .img-nav-btn {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Animation class */
-        .slide-animation {
-            transform: translateX(30px);
-            opacity: 0;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            animation: fadeIn 0.3s ease;
-        }
-
-        .modal-content-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 85vh;
-            padding: 20px;
-        }
-
-        .modal-content {
-            max-width: 60%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 12px;
-            cursor: zoom-in;
-            transition: transform 0.3s ease;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
-        }
-
-        .modal-content.zoomed {
-            cursor: zoom-out;
-            transform: scale(2);
-        }
-
-        .modal-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            color: #000;
-            border: none;
-            padding: 0px 15px;
-            cursor: pointer;
-            font-size: 30px;
-            border-radius: 50%;
-            z-index: 1001;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .modal-nav-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .modal-prev-btn {
-            left: 200px;
-        }
-
-        .modal-next-btn {
-            right: 200px;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-            z-index: 1001;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .close:hover {
-            color: #ff3b3b;
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Modal Thumbnails */
-        .modal-thumbnails {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .modal-thumbnails img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border: 2px solid transparent;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0.7;
-        }
-
-        .modal-thumbnails img:hover {
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        .modal-thumbnails img.active {
-            border: 2px solid #007bff;
-            opacity: 1;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .product-gallery {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .product-thumbnails {
-                flex-direction: row;
-                width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .product-thumbnails img {
-                width: 60px;
-            }
-
-            .modal-nav-btn {
-                padding: 10px 20px;
-                font-size: 24px;
-            }
-
-            .modal-prev-btn {
-                left: 15px;
-            }
-
-            .modal-next-btn {
-                right: 15px;
-            }
-
-            .modal-thumbnails {
-                bottom: 10px;
-                padding: 10px;
-            }
-
-            .modal-thumbnails img {
-                width: 50px;
-                height: 50px;
-            }
-
-            .close {
-                top: 15px;
-                right: 15px;
-                width: 50px;
-                height: 50px;
-                font-size: 30px;
-            }
-        }
-    </style>
-
-    <!-- Include jQuery and Zoom plugin -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
-
-    <script>
-        $(function () {
-            const images = [
-                "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg",
-                "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg",
-                "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.webp",
-                "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/4.webp",
-                "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/5.webp"
-            ];
-
-            let currentIndex = 0;
-            let zoomEnabled = false;
-            let isZoomed = false;
-
-            const $productWrap = $(".product-main-image");
-            const $mainImage = $("#mainProductImage");
-            const $prevBtn = $(".prev-btn");
-            const $nextBtn = $(".next-btn");
-            const $thumbs = $(".product-thumbnails img");
-            
-            // Modal elements
-            const $modal = $("#imageModal");
-            const $modalImage = $("#modalImage");
-            const $modalPrevBtn = $(".modal-prev-btn");
-            const $modalNextBtn = $(".modal-next-btn");
-            const $closeBtn = $(".close");
-            const $modalThumbnails = $(".modal-thumbnails");
-
-            // Initialize modal thumbnails
-            function initModalThumbnails() {
-                $modalThumbnails.empty();
-                images.forEach((img, index) => {
-                    const $thumb = $('<img>').attr({
-                        src: img,
-                        alt: `Thumbnail ${index + 1}`,
-                        'data-index': index
-                    });
-                    if (index === currentIndex) {
-                        $thumb.addClass('active');
-                    }
-                    $modalThumbnails.append($thumb);
-                });
-            }
-
-            function showImage(index) {
-                if (index < 0) index = images.length - 1;
-                if (index >= images.length) index = 0;
-                currentIndex = index;
-
-                // Update main gallery
-                $thumbs.removeClass("active");
-                $thumbs.eq(currentIndex).addClass("active");
-                $mainImage.attr("src", images[currentIndex]);
-
-                // Update modal if open
-                if ($modal.is(':visible')) {
-                    $modalImage.attr("src", images[currentIndex]);
-                    $(".modal-thumbnails img").removeClass("active");
-                    $(".modal-thumbnails img").eq(currentIndex).addClass("active");
-                    isZoomed = false;
-                    $modalImage.removeClass('zoomed');
-                }
-
-                // Reinitialize zoom for main gallery
-                if (zoomEnabled) {
-                    $mainImage.off("load.showImage");
-                    $mainImage.on("load.showImage", function () {
-                        setTimeout(initZoom, 50);
-                    });
-                }
-            }
-
-            function initZoom() {
-                if (!$modal.is(':visible')) {
-                    $mainImage.zoom();
-                    zoomEnabled = true;
-                }
-            }
-
-            function destroyZoomImmediate() {
-                $mainImage.trigger('zoom.destroy');
-                zoomEnabled = false;
-            }
-
-            // Initialize
-            $thumbs.each(function (i) { 
-                $(this).attr("data-index", i); 
-            });
-            showImage(0);
-            setTimeout(initZoom, 100);
-
-            // Thumbnail clicks in main gallery
-            $thumbs.on("click", function () {
-                const idx = Number($(this).attr("data-index"));
-                showImage(idx);
-            });
-
-            // Navigation buttons in main gallery
-            $prevBtn.on("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                showImage(currentIndex - 1);
-            });
-
-            $nextBtn.on("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                showImage(currentIndex + 1);
-            });
-
-            // Zoom management for nav buttons
-            [$prevBtn, $nextBtn].forEach($btn => {
-                $btn.on("mouseenter touchstart", destroyZoomImmediate);
-                $btn.on("mouseleave touchend", function() {
-                    if (!zoomEnabled && !$modal.is(':visible')) {
-                        setTimeout(() => {
-                            if ($mainImage[0].complete) initZoom();
-                        }, 80);
-                    }
-                });
-            });
-
-            $productWrap.on("mouseleave", function () {
-                if (!zoomEnabled && !$modal.is(':visible')) {
-                    setTimeout(() => { 
-                        if ($mainImage[0].complete) initZoom(); 
-                    }, 80);
-                }
-            });
-
-            // Open fullscreen modal when clicking main image
-            $mainImage.on("click", function(e) {
-                destroyZoomImmediate();
-                initModalThumbnails();
-                $modalImage.attr("src", images[currentIndex]);
-                $modal.show();
-                $('body').css('overflow', 'hidden');
-            });
-
-            // Close modal functions
-            function closeModal() {
-                $modal.hide();
-                $('body').css('overflow', 'auto');
-                isZoomed = false;
-                $modalImage.removeClass('zoomed');
-                setTimeout(initZoom, 100);
-            }
-
-            $closeBtn.on("click", closeModal);
-
-            $modal.on("click", function(e) {
-                if (e.target === this) {
-                    closeModal();
-                }
-            });
-
-            // Modal navigation buttons
-            $modalPrevBtn.on("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                showImage(currentIndex - 1);
-            });
-
-            $modalNextBtn.on("click", function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                showImage(currentIndex + 1);
-            });
-
-            // Modal thumbnail clicks
-            $modalThumbnails.on("click", "img", function() {
-                const idx = Number($(this).attr("data-index"));
-                showImage(idx);
-            });
-
-            // Zoom functionality in modal
-            $modalImage.on("click", function(e) {
-                e.stopPropagation();
-                isZoomed = !isZoomed;
-                $(this).toggleClass('zoomed', isZoomed);
-            });
-
-            // Keyboard navigation
-            $(document).on('keydown', function(e) {
-                if ($modal.is(':visible')) {
-                    switch(e.key) {
-                        case 'Escape':
-                            closeModal();
-                            break;
-                        case 'ArrowLeft':
-                            showImage(currentIndex - 1);
-                            break;
-                        case 'ArrowRight':
-                            showImage(currentIndex + 1);
-                            break;
-                    }
-                }
-            });
-        });
-    </script>
-</section>
+                                    <section class="product-images-section">
+                                        <div class="product-gallery">
+                                            <!-- Left Thumbnails -->
+                                            <div class="product-thumbnails">
+                                                <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg"
+                                                    alt="Thumbnail 1" class="active" data-index="0">
+                                                <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg"
+                                                    alt="Thumbnail 2" data-index="1">
+                                                <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.webp"
+                                                    alt="Thumbnail 3" data-index="2">
+                                                <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/4.webp"
+                                                    alt="Thumbnail 4" data-index="3">
+                                                <img src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/5.webp"
+                                                    alt="Thumbnail 5" data-index="4">
+                                            </div>
+
+                                            <div class="product-main-image ">
+                                                <img id="mainProductImage"
+                                                    src="./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg"
+                                                    alt="Main Product">
+
+                                                <button class="img-nav-btn prev-btn">&#10094;</button>
+                                                <button class="img-nav-btn next-btn">&#10095;</button>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- Fullscreen Modal -->
+                                        <div id="imageModal" class="modal">
+                                            <span class="close">&times;</span>
+                                            <div class="modal-content-wrapper">
+                                                <button class="modal-nav-btn modal-prev-btn">&#10094;</button>
+                                                <img class="modal-content zoom-image-hover" id="modalImage"
+                                                    alt="Fullscreen Product Image">
+                                                <button class="modal-nav-btn modal-next-btn">&#10095;</button>
+                                            </div>
+                                            <div class="modal-thumbnails">
+
+                                            </div>
+                                        </div>
+
+                                        <style>
+                                            /* container so zoom stays inside */
+                                            /* container */
+                                            .modal-content-wrapper {
+                                                position: relative;
+                                                overflow: hidden;
+                                            }
+
+                                            /* image */
+                                           #modalImage {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* smooth zoom in/out */
+  cursor: zoom-in;
+  transform-origin: center center;
+}
+
+
+
+                                            .product-gallery {
+                                                display: flex;
+                                                gap: 30px;
+                                                align-items: flex-start;
+                                            }
+
+                                            /* Thumbnails */
+                                            .product-thumbnails {
+                                                display: flex;
+                                                flex-direction: column;
+                                                gap: 10px;
+                                                width: 80px;
+                                            }
+
+                                            .product-thumbnails img {
+                                                width: 113%;
+                                                border: 2px solid transparent;
+                                                border-radius: 6px;
+                                                cursor: pointer;
+                                                transition: transform 0.3s ease, border 0.3s ease;
+                                            }
+
+                                            .product-thumbnails img:hover {
+                                                transform: scale(1.05);
+                                            }
+
+                                            .product-thumbnails img.active {
+                                                border: 1px solid #010101;
+                                            }
+
+                                            /* Main image */
+                                            .product-main-image {
+                                                flex: 1;
+                                                text-align: center;
+                                                border: 2px solid #e2e0e0;
+                                                border-radius: 10px;
+                                                padding: 10px;
+                                                background: #fff;
+                                                position: relative;
+                                                cursor: pointer;
+                                            }
+
+                                            .product-main-image img {
+                                                width: 100%;
+                                                height: auto;
+                                                border-radius: 6px;
+                                                transition: transform 0.5s ease, opacity 0.5s ease;
+                                            }
+
+                                            .product-main-image:hover img {
+                                                transform: scale(1.02);
+                                            }
+
+                                            .img-nav-btn {
+                                                position: absolute;
+                                                top: 50%;
+                                                transform: translateY(-50%);
+                                                background: #8f8e8c;
+                                                color: #ffffff;
+                                                border: none;
+                                                padding: 10px 20px;
+                                                cursor: pointer;
+                                                font-size: 20px;
+                                                border-radius: 50%;
+                                                opacity: 0;
+                                                visibility: hidden;
+                                                z-index: 10;
+                                                transition: opacity 0.3s ease, visibility 0.3s ease, background 0.3s ease;
+                                            }
+
+                                            .img-nav-btn:hover {
+                                                background: rgba(0, 0, 0, 0.8);
+                                            }
+
+                                            .prev-btn {
+                                                left: 10px;
+                                            }
+
+                                            .next-btn {
+                                                right: 10px;
+                                            }
+
+                                            .product-main-image:hover .img-nav-btn {
+                                                opacity: 1;
+                                                visibility: visible;
+                                            }
+
+                                            /* Animation class */
+                                            .slide-animation {
+                                                transform: translateX(30px);
+                                                opacity: 0;
+                                            }
+
+                                            /* Modal Styles */
+                                            .modal {
+                                                display: none;
+                                                position: fixed;
+                                                z-index: 1000;
+                                                left: 0;
+                                                top: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                background: rgba(0, 0, 0, 0.95);
+                                                animation: fadeIn 0.3s ease;
+                                            }
+
+                                            .modal-content-wrapper {
+                                                position: relative;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                height: 85vh;
+                                                padding: 20px;
+                                            }
+
+                                            .modal-content {
+                                                max-width: 60%;
+                                                max-height: 100%;
+                                                object-fit: contain;
+                                                border-radius: 12px;
+                                                cursor: zoom-in;
+                                                transition: transform 0.3s ease;
+                                                box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+                                            }
+
+                                            /* .modal-content.zoomed {
+                                                cursor: zoom-out;
+                                                transform: scale(2);
+                                            } */
+
+                                            .modal-nav-btn {
+                                                position: absolute;
+                                                top: 50%;
+                                                transform: translateY(-50%);
+                                                background: rgba(255, 255, 255, 0.9);
+                                                color: #000;
+                                                border: none;
+                                                padding: 0px 15px;
+                                                cursor: pointer;
+                                                font-size: 30px;
+                                                border-radius: 50%;
+                                                z-index: 1001;
+                                                transition: all 0.3s ease;
+                                                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                                            }
+
+                                            .modal-nav-btn:hover {
+                                                background: rgba(255, 255, 255, 1);
+                                                transform: translateY(-50%) scale(1.1);
+                                            }
+
+                                            .modal-prev-btn {
+                                                left: 200px;
+                                            }
+
+                                            .modal-next-btn {
+                                                right: 200px;
+                                            }
+
+                                            .close {
+                                                position: absolute;
+                                                top: 20px;
+                                                right: 40px;
+                                                color: #fff;
+                                                font-size: 40px;
+                                                font-weight: bold;
+                                                cursor: pointer;
+                                                transition: color 0.3s;
+                                                z-index: 1001;
+                                                background: rgba(0, 0, 0, 0.5);
+                                                border-radius: 50%;
+                                                width: 60px;
+                                                height: 60px;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                            }
+
+                                            .close:hover {
+                                                color: #ff3b3b;
+                                                background: rgba(0, 0, 0, 0.8);
+                                            }
+
+                                            /* Modal Thumbnails */
+                                            .modal-thumbnails {
+                                                position: absolute;
+                                                bottom: 20px;
+                                                left: 50%;
+                                                transform: translateX(-50%);
+                                                display: flex;
+                                                gap: 10px;
+                                                background: rgba(0, 0, 0, 0.7);
+                                                padding: 15px;
+                                                border-radius: 10px;
+                                                backdrop-filter: blur(10px);
+                                            }
+
+                                            .modal-thumbnails img {
+                                                width: 60px;
+                                                height: 60px;
+                                                object-fit: cover;
+                                                border: 2px solid transparent;
+                                                border-radius: 6px;
+                                                cursor: pointer;
+                                                transition: all 0.3s ease;
+                                                opacity: 0.7;
+                                            }
+
+                                            .modal-thumbnails img:hover {
+                                                opacity: 1;
+                                                transform: scale(1.1);
+                                            }
+
+                                            .modal-thumbnails img.active {
+                                                border: 2px solid #007bff;
+                                                opacity: 1;
+                                            }
+
+                                            @keyframes fadeIn {
+                                                from {
+                                                    opacity: 0;
+                                                }
+
+                                                to {
+                                                    opacity: 1;
+                                                }
+                                            }
+
+                                            /* Responsive */
+                                            @media (max-width: 768px) {
+                                                .product-gallery {
+                                                    flex-direction: column;
+                                                    align-items: center;
+                                                }
+
+                                                .product-thumbnails {
+                                                    flex-direction: row;
+                                                    width: 100%;
+                                                    justify-content: center;
+                                                    flex-wrap: wrap;
+                                                }
+
+                                                .product-thumbnails img {
+                                                    width: 60px;
+                                                }
+
+                                                .modal-nav-btn {
+                                                    padding: 10px 20px;
+                                                    font-size: 24px;
+                                                }
+
+                                                .modal-prev-btn {
+                                                    left: 15px;
+                                                }
+
+                                                .modal-next-btn {
+                                                    right: 15px;
+                                                }
+
+                                                .modal-thumbnails {
+                                                    bottom: 10px;
+                                                    padding: 10px;
+                                                }
+
+                                                .modal-thumbnails img {
+                                                    width: 50px;
+                                                    height: 50px;
+                                                }
+
+                                                .close {
+                                                    top: 15px;
+                                                    right: 15px;
+                                                    width: 50px;
+                                                    height: 50px;
+                                                    font-size: 30px;
+                                                }
+                                            }
+                                        </style>
+
+                                        <script>
+                                          const modalImg = document.getElementById("modalImage");
+
+modalImg.addEventListener("mousemove", function (e) {
+  const rect = modalImg.getBoundingClientRect();
+  let x = ((e.clientX - rect.left) / rect.width) * 100;
+  let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+  // clamp values so corners don’t glitch
+  x = Math.min(90, Math.max(10, x));
+  y = Math.min(90, Math.max(10, y));
+
+  modalImg.style.transformOrigin = `${x}% ${y}%`;
+  modalImg.style.transform = "scale(1.8)";
+});
+
+modalImg.addEventListener("mouseleave", function () {
+  modalImg.style.transform = "scale(1)"; // only reset scale
+  // optional: reset origin *after* transition ends
+  setTimeout(() => {
+    modalImg.style.transformOrigin = "center center";
+  }, 300); // same as CSS transition duration
+});
+
+
+                                        </script>
+
+
+
+                                        <!-- Include jQuery and Zoom plugin -->
+                                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                        <script
+                                            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
+
+                                        <script>
+                                            $(function () {
+                                                const images = [
+                                                    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/1.jpg",
+                                                    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/2.jpg",
+                                                    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/3.webp",
+                                                    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/4.webp",
+                                                    "./assets/1. LUXURY SERIES (50)/1. Armani Luxury High Back Chair [Green]/5.webp"
+                                                ];
+
+                                                let currentIndex = 0;
+                                                let zoomEnabled = false;
+                                                let isZoomed = false;
+
+                                                const $productWrap = $(".product-main-image");
+                                                const $mainImage = $("#mainProductImage");
+                                                const $prevBtn = $(".prev-btn");
+                                                const $nextBtn = $(".next-btn");
+                                                const $thumbs = $(".product-thumbnails img");
+
+                                                // Modal elements
+                                                const $modal = $("#imageModal");
+                                                const $modalImage = $("#modalImage");
+                                                const $modalPrevBtn = $(".modal-prev-btn");
+                                                const $modalNextBtn = $(".modal-next-btn");
+                                                const $closeBtn = $(".close");
+                                                const $modalThumbnails = $(".modal-thumbnails");
+
+                                                // Initialize modal thumbnails
+                                                function initModalThumbnails() {
+                                                    $modalThumbnails.empty();
+                                                    images.forEach((img, index) => {
+                                                        const $thumb = $('<img>').attr({
+                                                            src: img,
+                                                            alt: `Thumbnail ${index + 1}`,
+                                                            'data-index': index
+                                                        });
+                                                        if (index === currentIndex) {
+                                                            $thumb.addClass('active');
+                                                        }
+                                                        $modalThumbnails.append($thumb);
+                                                    });
+                                                }
+
+                                                function showImage(index) {
+                                                    if (index < 0) index = images.length - 1;
+                                                    if (index >= images.length) index = 0;
+                                                    currentIndex = index;
+
+                                                    // Update main gallery
+                                                    $thumbs.removeClass("active");
+                                                    $thumbs.eq(currentIndex).addClass("active");
+                                                    $mainImage.attr("src", images[currentIndex]);
+
+                                                    // Update modal if open
+                                                    if ($modal.is(':visible')) {
+                                                        $modalImage.attr("src", images[currentIndex]);
+                                                        $(".modal-thumbnails img").removeClass("active");
+                                                        $(".modal-thumbnails img").eq(currentIndex).addClass("active");
+                                                        isZoomed = false;
+                                                        $modalImage.removeClass('zoomed');
+                                                    }
+
+                                                    // Reinitialize zoom for main gallery
+                                                    if (zoomEnabled) {
+                                                        $mainImage.off("load.showImage");
+                                                        $mainImage.on("load.showImage", function () {
+                                                            setTimeout(initZoom, 50);
+                                                        });
+                                                    }
+                                                }
+
+                                                function initZoom() {
+                                                    if (!$modal.is(':visible')) {
+                                                        $mainImage.zoom();
+                                                        zoomEnabled = true;
+                                                    }
+                                                }
+
+                                                function destroyZoomImmediate() {
+                                                    $mainImage.trigger('zoom.destroy');
+                                                    zoomEnabled = false;
+                                                }
+
+                                                // Initialize
+                                                $thumbs.each(function (i) {
+                                                    $(this).attr("data-index", i);
+                                                });
+                                                showImage(0);
+                                                setTimeout(initZoom, 100);
+
+                                                // Thumbnail clicks in main gallery
+                                                $thumbs.on("click", function () {
+                                                    const idx = Number($(this).attr("data-index"));
+                                                    showImage(idx);
+                                                });
+
+                                                // Navigation buttons in main gallery
+                                                $prevBtn.on("click", function (e) {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    showImage(currentIndex - 1);
+                                                });
+
+                                                $nextBtn.on("click", function (e) {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    showImage(currentIndex + 1);
+                                                });
+
+                                                // Zoom management for nav buttons
+                                                [$prevBtn, $nextBtn].forEach($btn => {
+                                                    $btn.on("mouseenter touchstart", destroyZoomImmediate);
+                                                    $btn.on("mouseleave touchend", function () {
+                                                        if (!zoomEnabled && !$modal.is(':visible')) {
+                                                            setTimeout(() => {
+                                                                if ($mainImage[0].complete) initZoom();
+                                                            }, 80);
+                                                        }
+                                                    });
+                                                });
+
+                                                $productWrap.on("mouseleave", function () {
+                                                    if (!zoomEnabled && !$modal.is(':visible')) {
+                                                        setTimeout(() => {
+                                                            if ($mainImage[0].complete) initZoom();
+                                                        }, 80);
+                                                    }
+                                                });
+
+                                                // Open fullscreen modal when clicking main image
+                                                $mainImage.on("click", function (e) {
+                                                    destroyZoomImmediate();
+                                                    initModalThumbnails();
+                                                    $modalImage.attr("src", images[currentIndex]);
+                                                    $modal.show();
+                                                    $('body').css('overflow', 'hidden');
+                                                });
+
+                                                // Close modal functions
+                                                function closeModal() {
+                                                    $modal.hide();
+                                                    $('body').css('overflow', 'auto');
+                                                    isZoomed = false;
+                                                    $modalImage.removeClass('zoomed');
+                                                    setTimeout(initZoom, 100);
+                                                }
+
+                                                $closeBtn.on("click", closeModal);
+
+                                                $modal.on("click", function (e) {
+                                                    if (e.target === this) {
+                                                        closeModal();
+                                                    }
+                                                });
+
+                                                // Modal navigation buttons
+                                                $modalPrevBtn.on("click", function (e) {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    showImage(currentIndex - 1);
+                                                });
+
+                                                $modalNextBtn.on("click", function (e) {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    showImage(currentIndex + 1);
+                                                });
+
+                                                // Modal thumbnail clicks
+                                                $modalThumbnails.on("click", "img", function () {
+                                                    const idx = Number($(this).attr("data-index"));
+                                                    showImage(idx);
+                                                });
+
+                                                // Zoom functionality in modal
+                                                $modalImage.on("click", function (e) {
+                                                    e.stopPropagation();
+                                                    isZoomed = !isZoomed;
+                                                    $(this).toggleClass('zoomed', isZoomed);
+                                                });
+
+                                                // Keyboard navigation
+                                                $(document).on('keydown', function (e) {
+                                                    if ($modal.is(':visible')) {
+                                                        switch (e.key) {
+                                                            case 'Escape':
+                                                                closeModal();
+                                                                break;
+                                                            case 'ArrowLeft':
+                                                                showImage(currentIndex - 1);
+                                                                break;
+                                                            case 'ArrowRight':
+                                                                showImage(currentIndex + 1);
+                                                                break;
+                                                        }
+                                                    }
+                                                });
+                                            });
+                                        </script>
+                                    </section>
 
                                 </div>
 
@@ -1003,7 +1057,8 @@
                                 <div class="single-pro-desc single-pro-desc-no-sidebar m-t-991 "
                                     style="padding-left: 70px;">
                                     <div class="single-pro-content">
-                                        <h5 class="ms-single-title"> Akavi Armani Luxury High Back Chair [Green]</h5>
+                                        <h5 class="ms-single-title"> Akavi Armani Luxury High Back <br> Chair [Green]
+                                        </h5>
                                         <div class="ms-single-rating-wrap">
                                             <div class="ms-single-rating">
                                                 <i class="msicon msi-star fill" style="font-size: 20px;"></i>
@@ -1018,9 +1073,27 @@
 
                                         <div class="ms-single-price-stoke">
                                             <div class="ms-single-price">
-                                                <div class="final-price">Rs. 97,990.00<span class="price-des"
-                                                        style="background-color: #B2190A; color: white; padding: 4px; border-radius: 10px;">SAVE
-                                                        27%</span></div>
+                                                <div class="final-price">Rs. 97,990.00
+
+                                                    <span class="price-des"
+                                                        style="background-color: #B2190A; color: white; padding: 5px ; border-radius: 10px; ">SAVE
+                                                        27%
+                                                    </span>
+
+                                                </div>
+
+                                                <!-- <style>
+                                                    .final-price {
+  text-align: center; 
+}
+.final-price .price-des {
+  display: inline-block; 
+  margin-bottom: 5px; 
+}
+
+                                                </style> -->
+
+
                                                 <div class="mrp" style="font-size: 22px; font-weight: 500;">
                                                     <span style="font-size: 21px; font-weight: 600;">Rs.
                                                         97,990.00</span>
@@ -1120,7 +1193,7 @@
 
                                             .product-meta {
                                                 margin-top: 20px;
-                                               
+
                                             }
 
                                             .availability,
@@ -1189,207 +1262,213 @@
                                                 Enquire Now
                                             </button>
 
-                                    <style>
-    .modal-content {
-        border: none;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-    .modal-dialog-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
+                                            <style>
+                                                .modal-content {
+                                                    border: none;
+                                                    border-radius: 20px;
+                                                    overflow: hidden;
+                                                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                                                }
+
+                                                .modal-dialog-centered {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    min-height: 100vh;
+                                                }
 
 
-    .modal-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        padding: 2rem;
-    }
+                                                .modal-header {
+                                                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                                    color: white;
+                                                    border: none;
+                                                    padding: 2rem;
+                                                }
 
-    .modal-title {
-        font-weight: normal; /* same as body text */
-        font-size: 1.5rem;
-        font-family: inherit; /* inherit body font */
-    }
+                                                .modal-title {
+                                                    font-weight: normal;
+                                                    /* same as body text */
+                                                    font-size: 1.5rem;
+                                                    font-family: inherit;
+                                                    /* inherit body font */
+                                                }
 
-    .btn-close {
-        filter: invert(1);
-        opacity: 0.8;
-    }
+                                                .btn-close {
+                                                    filter: invert(1);
+                                                    opacity: 0.8;
+                                                }
 
-    .btn-close:hover {
-        opacity: 1;
-    }
+                                                .btn-close:hover {
+                                                    opacity: 1;
+                                                }
 
-    .modal-body {
-        padding: 2rem;
-        background: #f8f9fa;
-    }
+                                                .modal-body {
+                                                    padding: 2rem;
+                                                    background: #f8f9fa;
+                                                }
 
-    .form-floating {
-        margin-bottom: 1.5rem;
-    }
+                                                .form-floating {
+                                                    margin-bottom: 1.5rem;
+                                                }
 
-    .form-control {
-        border: 2px solid #e9ecef;
-        border-radius: 15px;
-        padding: 1rem;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
+                                                .form-control {
+                                                    border: 2px solid #e9ecef;
+                                                    border-radius: 15px;
+                                                    padding: 1rem;
+                                                    font-size: 1rem;
+                                                    transition: all 0.3s ease;
+                                                }
 
-    .form-control:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
-    }
+                                                .form-control:focus {
+                                                    border-color: #667eea;
+                                                    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+                                                }
 
-    .form-select {
-        border: 2px solid #e9ecef;
-        border-radius: 15px;
-        padding: 1rem;
-        font-size: 1rem;
-    }
+                                                .form-select {
+                                                    border: 2px solid #e9ecef;
+                                                    border-radius: 15px;
+                                                    padding: 1rem;
+                                                    font-size: 1rem;
+                                                }
 
-    .form-select:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
-    }
+                                                .form-select:focus {
+                                                    border-color: #667eea;
+                                                    box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.25);
+                                                }
 
-    .btn-submit {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-        border-radius: 50px;
-        padding: 15px 40px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-        width: 100%;
-        color: white;
-    }
+                                                .btn-submit {
+                                                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                                                    border: none;
+                                                    border-radius: 50px;
+                                                    padding: 15px 40px;
+                                                    font-weight: 600;
+                                                    text-transform: uppercase;
+                                                    letter-spacing: 1px;
+                                                    transition: all 0.3s ease;
+                                                    width: 100%;
+                                                    color: white;
+                                                }
 
-    .btn-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
-        color: white;
-    }
+                                                .btn-submit:hover {
+                                                    transform: translateY(-2px);
+                                                    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+                                                    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+                                                    color: white;
+                                                }
 
-    .required {
-        color: #dc3545;
-    }
+                                                .required {
+                                                    color: #dc3545;
+                                                }
 
-    .form-check-input:checked {
-        background-color: #667eea;
-        border-color: #667eea;
-    }
+                                                .form-check-input:checked {
+                                                    background-color: #667eea;
+                                                    border-color: #667eea;
+                                                }
 
-    .animate-in {
-        animation: slideInUp 0.5s ease-out;
-    }
+                                                .animate-in {
+                                                    animation: slideInUp 0.5s ease-out;
+                                                }
 
-    @keyframes slideInUp {
-        from {
-            opacity: 0;
-            transform: translate3d(0, 100%, 0);
-        }
-        to {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-</style>
+                                                @keyframes slideInUp {
+                                                    from {
+                                                        opacity: 0;
+                                                        transform: translate3d(0, 100%, 0);
+                                                    }
 
-<!-- Modal -->
-<div class="modal fade" id="enquireModal" tabindex="-1"
-    aria-labelledby="enquireModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content animate-in">
-            <div class="modal-header">
-                <h5 class="modal-title" id="enquireModalLabel">
-                    Get in Touch with Us
-                </h5>
-                <button type="button" class="btn-close"
-                    data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="enquireForm" class="mx-auto" style="max-width: 700px;">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control"
-                                    id="firstName" placeholder="Full Name"
-                                    required>
-                                <label for="firstName">Full Name <span
-                                        class="required">*</span></label>
-                            </div>
-                        </div>
-                    </div>
+                                                    to {
+                                                        opacity: 1;
+                                                        transform: translate3d(0, 0, 0);
+                                                    }
+                                                }
+                                            </style>
 
-                    <div class="row">
-                        <div class="col-md-6 col-12">
-                            <div class="form-floating">
-                                <input type="email" class="form-control"
-                                    id="email" placeholder="Email Address"
-                                    required>
-                                <label for="email">Email Address <span
-                                        class="required">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <div class="form-floating">
-                                <input type="tel" class="form-control"
-                                    id="phone" placeholder="Phone Number"
-                                    required>
-                                <label for="phone">Phone Number <span
-                                        class="required">*</span></label>
-                            </div>
-                        </div>
-                    </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="enquireModal" tabindex="-1"
+                                                aria-labelledby="enquireModalLabel" aria-hidden="true">
+                                                <div
+                                                    class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                                                    <div class="modal-content animate-in">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="enquireModalLabel">
+                                                                Get in Touch with Us
+                                                            </h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form id="enquireForm" class="mx-auto"
+                                                                style="max-width: 700px;">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <div class="form-floating">
+                                                                            <input type="text" class="form-control"
+                                                                                id="firstName" placeholder="Full Name"
+                                                                                required>
+                                                                            <label for="firstName">Full Name <span
+                                                                                    class="required">*</span></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
-                    <div class="form-floating">
-                        <textarea class="form-control" id="message"
-                            placeholder="Your Message" style="height: 120px"
-                            required></textarea>
-                        <label for="message">Your Message <span
-                                class="required">*</span></label>
-                    </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-6 col-12">
+                                                                        <div class="form-floating">
+                                                                            <input type="email" class="form-control"
+                                                                                id="email" placeholder="Email Address"
+                                                                                required>
+                                                                            <label for="email">Email Address <span
+                                                                                    class="required">*</span></label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-6 col-12">
+                                                                        <div class="form-floating">
+                                                                            <input type="tel" class="form-control"
+                                                                                id="phone" placeholder="Phone Number"
+                                                                                required>
+                                                                            <label for="phone">Phone Number <span
+                                                                                    class="required">*</span></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox"
-                            id="newsletter">
-                        <label class="form-check-label" for="newsletter">
-                            I would like to receive updates and newsletters
-                        </label>
-                    </div>
+                                                                <div class="form-floating">
+                                                                    <textarea class="form-control" id="message"
+                                                                        placeholder="Your Message" style="height: 120px"
+                                                                        required></textarea>
+                                                                    <label for="message">Your Message <span
+                                                                            class="required">*</span></label>
+                                                                </div>
 
-                    <div class="form-check mb-4">
-                        <input class="form-check-input" type="checkbox"
-                            id="terms" required>
-                        <label class="form-check-label" for="terms">
-                            I agree to the <a href="#"
-                                class="text-decoration-none">Terms &
-                                Conditions</a> and <a href="#"
-                                class="text-decoration-none">Privacy
-                                Policy</a> <span class="required">*</span>
-                        </label>
-                    </div>
+                                                                <div class="form-check mb-3">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        id="newsletter">
+                                                                    <label class="form-check-label" for="newsletter">
+                                                                        I would like to receive updates and newsletters
+                                                                    </label>
+                                                                </div>
 
-                    <button type="submit"
-                        class="btn btn-primary btn-submit">
-                        <i class="fas fa-paper-plane me-2"></i>
-                        Send Enquiry
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+                                                                <div class="form-check mb-4">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        id="terms" required>
+                                                                    <label class="form-check-label" for="terms">
+                                                                        I agree to the <a href="#"
+                                                                            class="text-decoration-none">Terms &
+                                                                            Conditions</a> and <a href="#"
+                                                                            class="text-decoration-none">Privacy
+                                                                            Policy</a> <span class="required">*</span>
+                                                                    </label>
+                                                                </div>
+
+                                                                <button type="submit"
+                                                                    class="btn btn-primary btn-submit">
+                                                                    <i class="fas fa-paper-plane me-2"></i>
+                                                                    Send Enquiry
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 
 
@@ -1450,19 +1529,31 @@
                                             data-bs-target="#ms-spt-nav-details" role="tab">Features</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ms-spt-nav-info"
-                                            role="tab">Product Care</a>
+                                        <a class="nav-link " data-bs-toggle="tab" data-bs-target="#ms-spt-nav-assembly"
+                                            role="tab">Assembly</a>
                                     </li>
-
                                     <li class="nav-item">
-                                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ms-spt-nav-review"
+                                        <a class="nav-link" data-bs-toggle="tab" data-bs-target="#ms-spt-nav-Warranty"
                                             role="tab">Warranty</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab"
+                                            data-bs-target="#ms-spt-nav-Replacement" role="tab">Replacement</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab"
+                                            data-bs-target="#ms-spt-nav-Product-Care" role="tab">Product Care</a>
+                                    </li>
+
+
                                 </ul>
                             </div>
 
 
                             <div class="tab-content  ms-single-pro-tab-content">
+
+
+
                                 <div id="ms-spt-nav-details" class="tab-pane fade show active">
                                     <div class="ms-single-pro-tab-desc">
                                         <div class="specifications-section">
@@ -1508,17 +1599,19 @@
                                                     <h3 style="color: #000; font-weight: 700;">Technical Specifications
                                                     </h3>
                                                     <ul>
-                                                        <li><strong>Frame Material:</strong> Glass-filled nylon
+                                                        <li><strong>Frame Material :</strong> Glass-filled nylon
                                                             structure
                                                         </li>
-                                                        <li><strong>Mechanism:</strong> 2:1 Multi-Lock Synchro Mechanism
+                                                        <li><strong>Mechanism :</strong> 2:1 Multi-Lock Synchro
+                                                            Mechanism
                                                         </li>
-                                                        <li><strong>Gas Lift:</strong> BIFMA Certified Class 4</li>
-                                                        <li><strong>Base:</strong> Heavy-duty metal base</li>
-                                                        <li><strong>Wheels:</strong> 60mm dual wheels</li>
-                                                        <li><strong>Swivel:</strong> 360° swivel</li>
-                                                        <li><strong>Maximum Weight Capacity:</strong> Up to 120 kg</li>
-                                                        <li><strong>Height Suitability:</strong> 5 ft to 5 ft 10 in</li>
+                                                        <li><strong>Gas Lift :</strong> BIFMA Certified Class 4</li>
+                                                        <li><strong>Base :</strong> Heavy-duty metal base</li>
+                                                        <li><strong>Wheels :</strong> 60mm dual wheels</li>
+                                                        <li><strong>Swivel :</strong> 360° swivel</li>
+                                                        <li><strong>Maximum Weight Capacity :</strong> Up to 120 kg</li>
+                                                        <li><strong>Height Suitability :</strong> 5 ft to 5 ft 10 in
+                                                        </li>
                                                     </ul>
                                                 </div>
 
@@ -1572,7 +1665,27 @@
 
                                     </div>
                                 </div>
-                                <div id="ms-spt-nav-info" class="tab-pane fade">
+
+                                <div id="ms-spt-nav-assembly" class="tab-pane fade">
+                                    <div class="ms-single-pro-tab-moreinfo">
+
+                                        <ul>
+                                            <li><span>DIY Assembly :
+                                                </span> Our chair is easy to assemble with the included installation
+                                                guide, typically taking just 10-20 minutes. In case you need tech
+                                                support it can be provided on a chargeable basis.
+                                            </li>
+                                            <!-- <li><span>Warranty</span> Enjoy peace of mind with our 1-year hassle-free
+                                                warranty. Replacement - 10 days of return and replacement policy in case
+                                                of any manufacturing defect or in-transit damage </li> -->
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                                <div id="ms-spt-nav-Product-Care" class="tab-pane fade">
                                     <div class="ms-single-pro-tab-moreinfo">
 
                                         <ul>
@@ -1584,16 +1697,16 @@
                                     </div>
                                 </div>
 
-                                <div id="ms-spt-nav-review" class="tab-pane fade">
+                                <div id="ms-spt-nav-Warranty" class="tab-pane fade">
                                     <div class="ms-single-pro-tab-moreinfo">
 
                                         <ul>
-                                            <li><span>DIY Assembly:
+                                            <!-- <li><span>DIY Assembly:
                                                 </span> Our chair is easy to assemble with the included installation
                                                 guide, typically taking just 10-20 minutes. In case you need tech
                                                 support it can be provided on a chargeable basis.
-                                            </li>
-                                            <li><span>Warranty</span> Enjoy peace of mind with our 1-year hassle-free
+                                            </li> -->
+                                            <li><span>Warranty : </span> Enjoy peace of mind with our 1-year hassle-free
                                                 warranty. Replacement - 10 days of return and replacement policy in case
                                                 of any manufacturing defect or in-transit damage </li>
 
@@ -1601,6 +1714,29 @@
                                         </ul>
                                     </div>
                                 </div>
+
+                                <div id="ms-spt-nav-Replacement" class="tab-pane fade">
+                                    <div class="ms-single-pro-tab-moreinfo">
+
+                                        <ul>
+                                            <!-- <li><span>DIY Assembly:
+                                                </span> Our chair is easy to assemble with the included installation
+                                                guide, typically taking just 10-20 minutes. In case you need tech
+                                                support it can be provided on a chargeable basis.
+                                            </li> -->
+                                            <li><span>Replacement :</span> 10 days of return and replacement policy in
+                                                case
+                                                of any manufacturing defect or in-transit damage </li>
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -1670,6 +1806,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+
         }
     </style>
     <section class="ms-service-section padding-tb-30">
@@ -1678,43 +1816,48 @@
                 <div class="ms-ser-content ms-ser-content-1 col-sm-6 col-md-6 col-lg-3 p-tp-12">
                     <div class="ms-ser-inner">
                         <div class="ms-service-image">
-                            <img src="./assets/icons/free-delivery.png" class="svg_img" alt="">
+                            <img src="https://daurban.com/cdn/shop/files/home-2-delivery-truck_100x_09ae12aa-f724-4eef-b7d3-d7278a1cb42d_200x.svg?v=1728301839"
+                                class="svg_img" alt="">
                         </div>
                         <div class="ms-service-desc">
                             <h3>Free Shipping</h3>
-                            <p>Free shipping on all US order or order above Rs2000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ms-ser-content ms-ser-content-2 col-sm-6 col-md-6 col-lg-3 p-tp-12">
-                    <div class="ms-ser-inner">
-                        <div class="ms-service-image">
-                            <img src="assets/icons/24-7.png" class="svg_img" alt="">
-                        </div>
-                        <div class="ms-service-desc">
-                            <h3>24X7 Support</h3>
-                            <p>Contact us 24 hours a day, 7 days a week</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ms-ser-content ms-ser-content-3 col-sm-6 col-md-6 col-lg-3 p-tp-12">
-                    <div class="ms-ser-inner">
-                        <div class="ms-service-image">
-                            <img src="./assets/icons/exchange.png" class="svg_img" alt="">
-                        </div>
-                        <div class="ms-service-desc">
-                            <h3>30 Days Return</h3>
-                            <p>Simply return it within 30 days for an exchange</p>
+                            <p>Free shipping across India</p>
                         </div>
                     </div>
                 </div>
                 <div class="ms-ser-content ms-ser-content-4 col-sm-6 col-md-6 col-lg-3 p-tp-12">
                     <div class="ms-ser-inner">
                         <div class="ms-service-image">
-                            <img src="./assets/icons/credit-card.png" class="svg_img" alt="">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4400/4400863.png" class="svg_img" alt="">
                         </div>
                         <div class="ms-service-desc">
-                            <h3>Payment Secure</h3>
+                            <h3>Warranty</h3>
+                            <p>3 year warranty against manufacturing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ms-ser-content ms-ser-content-3 col-sm-6 col-md-6 col-lg-3 p-tp-12">
+                    <div class="ms-ser-inner">
+                        <div class="ms-service-image">
+                            <img src="./assets/icons/exchange.png" class="svg_img" alt="">
+                        </div>
+                        <div class="ms-service-desc">
+                            <h3>Replacement</h3>
+                            <p>Replace it within 7 days of delivery</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="ms-ser-content ms-ser-content-2 col-sm-6 col-md-6 col-lg-3 p-tp-12">
+                    <div class="ms-ser-inner">
+                        <div class="ms-service-image">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-calling-icon-svg-png-download-3627892.png"
+                                class="svg_img" alt="">
+                        </div>
+                        <div class="ms-service-desc">
+                            <h3> Support</h3>
                             <p>Contact us 24 hours a day, 7 days a week</p>
                         </div>
                     </div>
@@ -1727,6 +1870,35 @@
         /* .color-swatches {
                                             margin-top: 10px;
                                         } */
+
+
+        .ms-service-image img:hover {
+            animation: shakeX 0.5s linear 1;
+        }
+
+        @keyframes shakeX {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-6px);
+            }
+
+            50% {
+                transform: translateX(3px);
+            }
+
+            75% {
+                transform: translateX(-6px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+
 
         .swatch-list {
             list-style: none;
@@ -1941,9 +2113,11 @@
                     var relatedProductsCarousel = $(".new-product-carousel").owlCarousel({
                         loop: false,
                         margin: 15,
-                        nav: false, // we are not using default nav
+                        nav: false,
                         dots: false,
-                        autoplay: false,
+                        autoplay: false,         // make sure autoplay is off
+                        autoplayTimeout: 0,      // disable any auto interval
+                        autoplayHoverPause: false,
                         responsive: {
                             0: { items: 1 },
                             600: { items: 2 },
@@ -1951,6 +2125,7 @@
                             1200: { items: 4 }
                         }
                     });
+
 
                     // Custom Prev Button
                     $("#relatedProductsPrev").click(function () {
@@ -2731,51 +2906,63 @@
 
     <!-- Back to top  -->
     <!-- Back to top button -->
-<a href="#" class="back-to-top-btn">
-  ⬆
-</a>
+    <a href="#" class="back-to-top-btn">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-top-arrow-icon-svg-png-download-1112318.png" alt="">
+    </a>
 
-<style>
-.back-to-top-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
-  background: #333;
-  color: #fff;
-  font-size: 22px;
-  text-align: center;
-  line-height: 45px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none; /* hidden by default */
-  z-index: 1000;
-  transition: background 0.3s ease;
-}
+    <style>
+        .back-to-top-btn img {
 
-.back-to-top-btn:hover {
-  background: #555;
-}
-</style>
+            margin-bottom: 5px;
 
-<script>
-// Show button after scrolling down
-window.addEventListener("scroll", function () {
-  const btn = document.querySelector(".back-to-top-btn");
-  if (window.scrollY > 200) {
-    btn.style.display = "block";
-  } else {
-    btn.style.display = "none";
-  }
-});
+            width: 70%;
+            height: 75%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
 
-// Scroll to top when clicked
-document.querySelector(".back-to-top-btn").addEventListener("click", function (e) {
-  e.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-</script>
+        .back-to-top-btn {
+            border: 1px solid rgb(185, 182, 182);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: #f4eeeec5;
+            color: #fff;
+            font-size: 22px;
+            text-align: center;
+            line-height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            /* hidden by default */
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        .back-to-top-btn:hover {
+            background: #f4eeeec5;
+        }
+    </style>
+
+    <script>
+        // Show button after scrolling down
+        window.addEventListener("scroll", function () {
+            const btn = document.querySelector(".back-to-top-btn");
+            if (window.scrollY > 200) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        });
+
+        // Scroll to top when clicked
+        document.querySelector(".back-to-top-btn").addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 
 
     <!-- Features sidebar  -->
