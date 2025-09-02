@@ -1073,26 +1073,29 @@ modalImg.addEventListener("mouseleave", function () {
 
                                         <div class="ms-single-price-stoke">
                                             <div class="ms-single-price">
-                                                <div class="final-price">Rs. 97,990.00
+                                                <div class="final-price" style="text-align: center !important; display: flex; align-items: center; justify-content: center;"
+                                                > 
+                                                 <div>  Rs. 97,990.00</div>
 
                                                     <span class="price-des"
-                                                        style="background-color: #B2190A; color: white; padding: 5px ; border-radius: 10px; ">SAVE
+                                                        style="background-color: #B2190A; color: white; padding: 0px 5px;  border-radius: 10px; ">SAVE
                                                         27%
                                                     </span>
 
                                                 </div>
 
-                                                <!-- <style>
-                                                    .final-price {
-  text-align: center; 
+                                              <style>
+.final-price {
+  text-align: center; /* center contents inside */
 }
+
 .final-price .price-des {
-  display: inline-block; 
-  margin-bottom: 5px; 
+       /* make it sit on its own line */
+
+  width: fit-content;     /* shrink background to text */
 }
 
-                                                </style> -->
-
+                                              </style>
 
                                                 <div class="mrp" style="font-size: 22px; font-weight: 500;">
                                                     <span style="font-size: 21px; font-weight: 600;">Rs.
