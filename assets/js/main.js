@@ -245,35 +245,24 @@
   });
 
   /*--------------------- New product section Slider ---------------------- */
-  $('.new-product-carousel').owlCarousel({
-    loop: true,
-    dots: false,
-    nav: false,
-    smartSpeed: 1000,
-    autoplay: true,
-    items: 3,
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      421: {
-        items: 2
-      },
-      768: {
-        items: 3
-      },
-      992: {
-        items: 3
-      },
-      1200: {
-        items: 4
-      },
-      1367: {
-        items: 5
-      }
-    }
-  });
+ $('.new-product-carousel').owlCarousel({
+  loop: true,
+  dots: false,
+  nav: false,
+  smartSpeed: 1000,
+  autoplay: false,   // 👈 stop auto slider
+  items: 3,
+  responsiveClass: true,
+  responsive: {
+    0: { items: 1 },
+    421: { items: 2 },
+    768: { items: 3 },
+    992: { items: 3 },
+    1200: { items: 4 },
+    1367: { items: 5 }
+  }
+});
+
 
   /*--------------------- Category slider section (Home Page) ---------------------- */
   $('.ms-category-block').owlCarousel({
