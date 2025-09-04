@@ -580,6 +580,59 @@
   /*----------------------------- Product Image Zoom --------------------------------*/
   $('.zoom-image-hover').zoom();
 
+
+
+    // Show button after scrolling down
+      window.addEventListener("scroll", function () {
+        const btn = document.querySelector(".back-to-top-btn");
+        if (window.scrollY > 200) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      });
+
+      // Scroll to top when clicked
+      document
+        .querySelector(".back-to-top-btn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+
+
+           $(document).ready(function () {
+            // Initialize Owl Carousel
+            var relatedProductsCarousel = $(
+              ".new-product-carousel"
+            ).owlCarousel({
+              loop: false,
+              margin: 15,
+              nav: false,
+              dots: false,
+              autoplay: false, // make sure autoplay is off
+              autoplayTimeout: 0, // disable any auto interval
+              autoplayHoverPause: false,
+              responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                900: { items: 3 },
+                1200: { items: 4 },
+              },
+            });
+
+            // Custom Prev Button
+            $("#relatedProductsPrev").click(function () {
+              relatedProductsCarousel.trigger("prev.owl.carousel");
+            });
+
+            // Custom Next Button
+            $("#relatedProductsNext").click(function () {
+              relatedProductsCarousel.trigger("next.owl.carousel");
+            });
+          });
+
   /*----------------------------- single product Slider  ------------------------------ */
   $('.single-product-cover').slick({
     slidesToShow: 1,
@@ -604,6 +657,27 @@
       $(this).addClass('active').siblings().removeClass('active');
     });
   });
+
+
+
+
+
+
+
+
+
+ const swatches =
+                          document.querySelectorAll(".color-swatch");
+                        swatches.forEach((swatch) => {
+                          swatch.addEventListener("click", () => {
+                            swatches.forEach((s) =>
+                              s.classList.remove("selected")
+                            );
+                            swatch.classList.add("selected");
+                          });
+                        });
+
+
 
   /*----------------------------- Back to top button  ------------------------------ */
   var btn = $('.ms-back-to-top');
@@ -774,3 +848,260 @@
   });
 
 })(jQuery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ const modalImg = document.getElementById("modalImage");
+
+                        modalImg.addEventListener("mousemove", function (e) {
+                          const rect = modalImg.getBoundingClientRect();
+                          let x = ((e.clientX - rect.left) / rect.width) * 100;
+                          let y = ((e.clientY - rect.top) / rect.height) * 100;
+
+                          // clamp values so corners don’t glitch
+                          x = Math.min(90, Math.max(10, x));
+                          y = Math.min(90, Math.max(10, y));
+
+                          modalImg.style.transformOrigin = `${x}% ${y}%`;
+                          modalImg.style.transform = "scale(1.8)";
+                        });
+
+                        modalImg.addEventListener("mouseleave", function () {
+                          modalImg.style.transform = "scale(1)"; // only reset scale
+                          // optional: reset origin *after* transition ends
+                          setTimeout(() => {
+                            modalImg.style.transformOrigin = "center center";
+                          }, 300); // same as CSS transition duration
+                        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+  $(function () {
+    let currentIndex = 0;
+    let zoomEnabled = false;
+    let isZoomed = false;
+
+    const $productWrap = $(".product-main-image");
+    const $mainImage = $("#mainProductImage");
+    const $prevBtn = $(".prev-btn");
+    const $nextBtn = $(".next-btn");
+    const $thumbs = $(".product-thumbnails img");
+
+    // Modal elements
+    const $modal = $("#imageModal");
+    const $modalImage = $("#modalImage");
+    const $modalPrevBtn = $(".modal-prev-btn");
+    const $modalNextBtn = $(".modal-next-btn");
+    const $closeBtn = $(".close");
+    const $modalThumbnails = $(".modal-thumbnails");
+
+    // ✅ Get images dynamically from thumbnails
+    const images = $thumbs.map(function () {
+      return $(this).attr("src");
+    }).get();
+
+    // Initialize modal thumbnails
+    function initModalThumbnails() {
+      $modalThumbnails.empty();
+      images.forEach((img, index) => {
+        const $thumb = $("<img>").attr({
+          src: img,
+          alt: `Thumbnail ${index + 1}`,
+          "data-index": index,
+        });
+        if (index === currentIndex) {
+          $thumb.addClass("active");
+        }
+        $modalThumbnails.append($thumb);
+      });
+    }
+
+    function showImage(index) {
+      if (index < 0) index = images.length - 1;
+      if (index >= images.length) index = 0;
+      currentIndex = index;
+
+      // Update main gallery
+      $thumbs.removeClass("active");
+      $thumbs.eq(currentIndex).addClass("active");
+      $mainImage.attr("src", images[currentIndex]);
+
+      // Update modal if open
+      if ($modal.is(":visible")) {
+        $modalImage.attr("src", images[currentIndex]);
+        $(".modal-thumbnails img").removeClass("active");
+        $(".modal-thumbnails img")
+          .eq(currentIndex)
+          .addClass("active");
+        isZoomed = false;
+        $modalImage.removeClass("zoomed");
+      }
+
+      // Reinitialize zoom
+      if (zoomEnabled) {
+        $mainImage.off("load.showImage");
+        $mainImage.on("load.showImage", function () {
+          setTimeout(initZoom, 50);
+        });
+      }
+    }
+
+    function initZoom() {
+      if (!$modal.is(":visible")) {
+        $mainImage.zoom();
+        zoomEnabled = true;
+      }
+    }
+
+    function destroyZoomImmediate() {
+      $mainImage.trigger("zoom.destroy");
+      zoomEnabled = false;
+    }
+
+    // Initialize
+    $thumbs.each(function (i) {
+      $(this).attr("data-index", i);
+    });
+    showImage(0);
+    setTimeout(initZoom, 100);
+
+    // Thumbnail clicks
+    $thumbs.on("click", function () {
+      const idx = Number($(this).attr("data-index"));
+      showImage(idx);
+    });
+
+    // Nav buttons
+    $prevBtn.on("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      showImage(currentIndex - 1);
+    });
+
+    $nextBtn.on("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      showImage(currentIndex + 1);
+    });
+
+    // Zoom handling for nav
+    [$prevBtn, $nextBtn].forEach(($btn) => {
+      $btn.on("mouseenter touchstart", destroyZoomImmediate);
+      $btn.on("mouseleave touchend", function () {
+        if (!zoomEnabled && !$modal.is(":visible")) {
+          setTimeout(() => {
+            if ($mainImage[0].complete) initZoom();
+          }, 80);
+        }
+      });
+    });
+
+    $productWrap.on("mouseleave", function () {
+      if (!zoomEnabled && !$modal.is(":visible")) {
+        setTimeout(() => {
+          if ($mainImage[0].complete) initZoom();
+        }, 80);
+      }
+    });
+
+    // Open modal
+    $mainImage.on("click", function () {
+      destroyZoomImmediate();
+      initModalThumbnails();
+      $modalImage.attr("src", images[currentIndex]);
+      $modal.show();
+      $("body").css("overflow", "hidden");
+    });
+
+    // Close modal
+    function closeModal() {
+      $modal.hide();
+      $("body").css("overflow", "auto");
+      isZoomed = false;
+      $modalImage.removeClass("zoomed");
+      setTimeout(initZoom, 100);
+    }
+
+    $closeBtn.on("click", closeModal);
+    $modal.on("click", function (e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Modal nav
+    $modalPrevBtn.on("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      showImage(currentIndex - 1);
+    });
+
+    $modalNextBtn.on("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      showImage(currentIndex + 1);
+    });
+
+    // Modal thumbs
+    $modalThumbnails.on("click", "img", function () {
+      const idx = Number($(this).attr("data-index"));
+      showImage(idx);
+    });
+
+    // Zoom in modal
+    $modalImage.on("click", function (e) {
+      e.stopPropagation();
+      isZoomed = !isZoomed;
+      $(this).toggleClass("zoomed", isZoomed);
+    });
+
+    // Keyboard nav
+    $(document).on("keydown", function (e) {
+      if ($modal.is(":visible")) {
+        switch (e.key) {
+          case "Escape": closeModal(); break;
+          case "ArrowLeft": showImage(currentIndex - 1); break;
+          case "ArrowRight": showImage(currentIndex + 1); break;
+        }
+      }
+    });
+  });
